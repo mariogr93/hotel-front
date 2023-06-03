@@ -9,8 +9,12 @@ export class HeaderComponent {
 
 
     isNavOpen = false;
+    isSearchOpen = false;
     openSidebar(){
         this.isNavOpen = !this.isNavOpen
     }
 
+    openSearch(){
+        this.isSearchOpen = !this.isSearchOpen
+    }
 }

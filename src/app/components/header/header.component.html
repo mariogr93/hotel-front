@@ -1,63 +1,63 @@
-<header class="desktop-view-header">
+<div class="top-component">
+  <div id="blurry-filter">
+    <header id="desktop-view-header">
+      <ul id="top-options">
+        <li class="input-container" [class.open-input]="isSearchOpen">
+          <i class="fa fa-search search-icon" (click)="openSearch()"></i>
+          <input class="search-input" type="text" name="" id="" />
+        </li>
 
-  <ul class="top-options">
+        <li id="logo-container">
+          <img
+            src="../../../assets/resort-logo-design-removebg-preview.png"
+            width="100"
+            alt="resort-logo"
+          />
+        </li>
 
-    <li class="">
-      <i class="fa fa-search fa-2x"></i>
-      <input type="text" name="" id="">
-    </li>
-
-    <li >
-      <img
-        src="../../../assets/resort-logo-design.png"
-        width="100"
-        alt="resort-logo"
-      />
-    </li>
-
-    <li >Reserve</li>
-  </ul>
-  <div class="header-divider"></div>
-
-  <!-- <ul>
-    <li class="nav__listitem">Ofers</li>
-    <li class="nav__listitem">
-      Rooms
-      <ul class="nav__listitem__drop">
-        <li>Single</li>
-        <li>Double</li>
-        <li>Triple</li>
+        <li id="reservation-btn-container"><Button id="reservation-btn">Reserve</Button></li>
       </ul>
-    </li>
-    <li class="nav__listitem">
-      Reservations
-      <ul class="nav__listitem__drop">
-        <li>Make a reservation</li>
-        <li>Request an invoice</li>
-        <li>Find a reservation</li>
-      </ul>
-    </li>
-    <li class="nav__listitem">
-      Food Menu
-      <ul class="nav__listitem__drop">
-        <li>Make a reservation</li>
-        <li>Request an invoice</li>
-        <li>Find a reservation</li>
-      </ul>
-    </li>
-    <li class="nav__listitem">
-      About us
-      <ul class="nav__listitem__drop">
-        <li (click)="openSidebar()">Location</li>
-        <li (click)="openSidebar()">Contact us</li>
-        <li (click)="openSidebar()">Our team</li>
-        <li (click)="openSidebar()">Careers</li>
-      </ul>
-    </li>
-  </ul> -->
-</header>
+      <div class="header-divider"></div>
 
-<!-- <header class="mobile-view-header">
+      <ul id="bottom-options">
+        <li class="option">Ofers</li>
+        <li class="option">
+          Rooms
+          <ul class="option-list">
+            <li>Single</li>
+            <li>Double</li>
+            <li>Triple</li>
+          </ul>
+        </li>
+        <li class="option">
+          Reservations
+          <ul class="option-list">
+            <li>Make a reservation</li>
+            <li>Request an invoice</li>
+            <li>Find a reservation</li>
+          </ul>
+        </li>
+        <li class="option">
+          Food Menu
+          <ul class="option-list">
+            <li>Make a reservation</li>
+            <li>Request an invoice</li>
+            <li>Find a reservation</li>
+          </ul>
+        </li>
+        <li class="option">
+          About us
+          <ul class="option-list">
+            <li (click)="openSidebar()">Location</li>
+            <li (click)="openSidebar()">Contact us</li>
+            <li (click)="openSidebar()">Our team</li>
+            <li (click)="openSidebar()">Careers</li>
+          </ul>
+        </li>
+      </ul>
+    </header>
+
+    <!-- <header class="mobile-view-header">
   <ul class="page-top">
     <li class="search-icon"><i class="fa fa-search fa-2x"></i></li>
     <li>
@@ -75,3 +75,13 @@
   </nav>
   
 </header> -->
+  </div>
+  <div class="img-background"></div>
+</div>
+
+<!-- <div id="popup-search">
+  <form id="search">
+    <label for="">search</label>
+    <input type="text">
+  </form>
+</div> -->
