@@ -1,48 +1,39 @@
-.top-component{
-    width: 100vw;
-    height: 100vh;
-    font-family: sans-serif;
-    font-weight: normal;
+#header-container {
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  font-weight: normal;
 }
 
-.img-background{
-  background-image: url('../../../assets/tropical-beach-2560x1440-5k-4k-wallpaper-8k-paradise-palms-sea-blue-11598.jpg');
+.img-background {
+  background-image: url("../../../assets/tropical-beach-2560x1440-5k-4k-wallpaper-8k-paradise-palms-sea-blue-11598.jpg");
   background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+  background-size: 100% 100%;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 #blurry-filter {
-  background-color: rgba(240, 255, 255, 0.100);
+  background-color: rgba(240, 255, 255, 0.1);
   position: absolute;
+  z-index: 1;
   width: 100%;
   height: auto;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0px 0px 60px 5px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0px 0px 60px 5px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0px 0px 60px 5px rgba(0,0,0,0.6);
-  -webkit-border-bottom-right-radius: 20px;
-  -webkit-border-bottom-left-radius: 20px;
-  -moz-border-radius-bottomright: 20px;
-  -moz-border-radius-bottomleft: 20px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-    
+  box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.6);
 }
 
-#desktop-view-header {
-    z-index: 1;
-
+.header-view {
+  z-index: 2;
   position: relative;
   width: 100%;
   display: block;
   padding: 5px 25px;
   background: none;
-  
-
 }
 
 #top-options {
@@ -57,33 +48,31 @@
   border-bottom: none;
 }
 
-#bottom-options{
+#bottom-options {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-
 .search-input {
   background-color: transparent;
   border: none;
   border-radius: 8px;
   height: 30px;
-
   width: 0px;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 35px;
   outline-width: 0;
   outline: none;
   color: black;
   transition: width 400ms ease-in, background-color 200ms ease-in;
 }
 
-.open-input input{
+.open-input input {
   width: 50%;
   background-color: aliceblue;
 }
-.open-input i{
+.open-input i {
   color: black;
 }
 .search-icon {
@@ -98,19 +87,17 @@
   position: absolute;
   outline-width: 0;
   cursor: pointer;
-  
 }
 
 .search-icon:hover {
   color: #000;
-  background-color: #add8e6;
+  background-color: #3cceff;
   border-radius: 8px;
 }
 
 .input-container {
   display: flex;
 }
-
 
 #logo-container {
   display: flex;
@@ -122,7 +109,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
 }
 
 #reservation-btn {
@@ -131,36 +117,33 @@
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.502);
   padding: 10px 30px;
-  font-size: 16px;
+  font-size: 18px;
   cursor: pointer;
-  
 }
 
 #reservation-btn:hover {
-  background-color: #add8e6;
+  background-color: #3cceff;
   border: 2px solid white;
   /* font-weight: bold; */
-  box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
-  -webkit-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
-  -moz-box-shadow: 0px 0px 20px 1px rgba(0,0,0,0.6);
+  box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.6);
 }
 
 .header-divider {
-  display: block;
   width: 100%;
   height: 2px;
   background-color: rgba(255, 255, 255, 0.259);
-} 
+}
 
 .option {
   list-style: none;
-  /* font-weight: bold; */
   position: relative;
   padding: 1.5rem 1rem;
   cursor: pointer;
   color: white;
   text-align: center;
-  width: 10%;
+  width: 15%;
   list-style: none;
 }
 
@@ -240,14 +223,21 @@ li:focus {
 } */
 
 .mobile-view-header {
-  position: fixed;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  display: block;
+  padding: 5px 25px;
+  background: none;
+
+  /* position: fixed;
   width: 100%;
   height: 80px;
   background-color: white;
   display: block;
   text-decoration: none;
   border: 2px solid black;
-  padding: 0px 10px;
+  padding: 0px 10px; */
 }
 
 .page-top {
@@ -263,65 +253,201 @@ li:focus {
 }
 
 .page-top li {
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 33.3%;
+  list-style: none;
+  padding: 0.5rem 1rem;
+  border-bottom: none;
 }
 
 .navigation {
-  position: fixed;
+  height: 100%;
+  background-color: black;
+  position: absolute;
   display: block;
   background-color: black;
   cursor: pointer;
-
   left: 100%;
-  width: 100%;
-  height: 500px;
+  width: 0%;
   opacity: 0;
   visibility: hidden;
   transform: translateX(-50px);
-  transition: opacity 200ms ease-in-out, transform 550ms ease-in-out, 0.4s;
+  transition: opacity 200ms ease-in-out, transform 550ms ease-in-out, all 0.4s ease-in-out;
 }
 
-.open {
+.open-navbar-mobile {
   left: 0;
   opacity: 1;
   visibility: visible;
   transform: translateX(0);
   width: 100%;
+
 }
 
-.open-navbar-icon {
-  position: relative;
-  display: block;
-  width: 40px;
-  cursor: pointer;
-  appearance: none;
-  background: none;
-  outline: none;
-  border: none;
+
+#check-rates-container {
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  top: 75%;
 }
-.open-navbar-icon .bar,
-.open-navbar-icon::before,
-.open-navbar-icon::after {
-  content: "";
-  display: block;
+
+#blurry-filter-check-rates {
+  background-color: rgba(240, 255, 255, 0.1);
   width: 100%;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0px;
-  transition: 0.4s;
-
-  border-radius: 10%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.rotate.open-navbar-icon::before {
-  transform: rotate(-45deg) translate(-9px, 6px);
+.check-rates-input-container {
+  align-items: center;
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  margin: 5px 10px;
+  width: 180px;
 }
 
-.rotate.open-navbar-icon::after {
-  transform: rotate(45deg) translate(-9px, -6px);
+.check-rates-icon {
+  background: 0 0;
+  border-width: 0;
+  color: lightgray;
+  text-align: center;
+  font-size: 20px;
+  position: absolute;
+  outline-width: 0;
+  cursor: pointer;
+  margin-right: 15px;
 }
 
-.rotate.bar {
-  opacity: 0;
+.check-rates-input {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  height: auto;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 30px 10px 10px;
+  outline-width: 0;
+  outline: none;
+  color: black;
+  transition: width 400ms ease-in, background-color 200ms ease-in;
+}
+
+.open-input input {
+  width: 50%;
+  background-color: aliceblue;
+}
+.open-input i {
+  color: black;
+}
+
+.search-icon:hover {
+  color: #000;
+  background-color: #add8e6;
+  border-radius: 8px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.check-rates-btn {
+  background-color: #3cceff;
+  color: white;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.502);
+  padding: 10px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  /* margin: 0 10px; */
+}
+
+.check-rates-btn:hover {
+  border: 2px solid white;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+@media only screen and (max-width: 700px) {
+  #reservation-btn {
+    display: none;
+  }
+
+  .header-divider {
+    display: none;
+    width: 100%;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.259);
+  }
+
+  #bottom-options {
+    display: none;
+  }
+
+  .open-navbar-icon-container {
+    position: relative;
+    display: block;
+    width: 40px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+  }
+  .open-navbar-icon-container .bar,
+  .open-navbar-icon-container::before,
+  .open-navbar-icon-container::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0px;
+    transition: 0.4s;
+
+    border-radius: 10%;
+  }
+
+  .rotate-icon.open-navbar-icon-container::before {
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+
+  .rotate-icon.open-navbar-icon-container::after {
+    transform: rotate(45deg) translate(-9px, -6px);
+  }
+
+  .rotate-icon.bar {
+    opacity: 0;
+  }
+
+  #check-rates-container {
+
+    height: auto;
+
+  
+  }
+
+  #blurry-filter-check-rates {
+
+    flex-direction: column;
+  
+  }
+
+  .check-rates-input-container {
+    width: 100%;
+    margin: 10px 10px;
+    padding: 0px 15px;
+  }
+
+  .check-rates-btn {
+    width: 100%;
+
+  }
+  
 }

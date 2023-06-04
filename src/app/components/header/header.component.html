@@ -1,6 +1,6 @@
-<div class="top-component">
+<div id="header-container">
   <div id="blurry-filter">
-    <header id="desktop-view-header">
+    <header class="header-view" >
       <ul id="top-options">
         <li class="input-container" [class.open-input]="isSearchOpen">
           <i class="fa fa-search search-icon" (click)="openSearch()"></i>
@@ -15,8 +15,17 @@
           />
         </li>
 
-        <li id="reservation-btn-container"><Button id="reservation-btn">Reserve</Button></li>
+        <li id="reservation-btn-container" >
+
+          <Button id="reservation-btn">Reserve</Button>
+          <div class="open-navbar-icon-container" [class.rotate-icon]="isNavOpen"
+          (click)="openSidebar()">
+
+            <div class="bar" [class.rotate-icon]="isNavOpen"></div>
+          </div>
+        </li>
       </ul>
+
       <div class="header-divider"></div>
 
       <ul id="bottom-options">
@@ -57,27 +66,73 @@
       </ul>
     </header>
 
-    <!-- <header class="mobile-view-header">
-  <ul class="page-top">
-    <li class="search-icon"><i class="fa fa-search fa-2x"></i></li>
-    <li>
-      <img
-        src="../../../assets/resort-logo-design.png"
-        width="100"
-        alt="resort-logo"
-      />
-    </li>
-    <li class="open-navbar-icon" [class.rotate]="isNavOpen" (click)="openSidebar()"><div class="bar" [class.rotate]="isNavOpen"></div></li>
-  </ul>
 
-  <nav class="navigation" [class.open]="isNavOpen">
-    
+  </div>
+  <nav class="navigation" [class.open-navbar-mobile]="isNavOpen">
+    <ul id="navigation-options-list">
+      <li class="navigation-option">Ofers</li>
+      <li class="navigation-option">
+        Rooms
+        <ul class="option-list">
+          <li>Single</li>
+          <li>Double</li>
+          <li>Triple</li>
+        </ul>
+      </li>
+      <li class="navigation-option">
+        Reservations
+        <ul class="option-list">
+          <li>Make a reservation</li>
+          <li>Request an invoice</li>
+          <li>Find a reservation</li>
+        </ul>
+      </li>
+      <li class="navigation-option">
+        Food Menu
+        <ul class="option-list">
+          <li>Make a reservation</li>
+          <li>Request an invoice</li>
+          <li>Find a reservation</li>
+        </ul>
+      </li>
+      <li class="navigation-option">
+        About us
+        <ul class="option-list">
+          <li (click)="openSidebar()">Location</li>
+          <li (click)="openSidebar()">Contact us</li>
+          <li (click)="openSidebar()">Our team</li>
+          <li (click)="openSidebar()">Careers</li>
+        </ul>
+      </li>
+    </ul>
   </nav>
   
-</header> -->
+
+  <div id="check-rates-container" *ngIf="!isNavOpen">
+    <div id="blurry-filter-check-rates">
+      <div class="check-rates-input-container">
+        <i class="fa fa-calendar check-rates-icon"></i>
+        <input class="check-rates-input" type="text" name="" id="" />
+      </div>
+      <div class="check-rates-input-container">
+        <i class="fa fa-users check-rates-icon"></i>
+        <input class="check-rates-input" type="text" name="" id="" />
+      </div>
+      <div class="check-rates-input-container">
+        <i class="fa fa-hotel check-rates-icon"></i>
+        <input class="check-rates-input" type="text" name="" id="" />
+      </div>
+
+      <div class="check-rates-input-container">
+        <button class="check-rates-btn">Check Rates</button>
+
+      </div>
+
+    </div>
   </div>
-  <div class="img-background"></div>
+  <div class="img-background" ></div>
 </div>
+
 
 <!-- <div id="popup-search">
   <form id="search">
