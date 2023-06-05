@@ -69,41 +69,45 @@
 
   </div>
   <nav class="navigation" [class.open-navbar-mobile]="isNavOpen">
-    <ul id="navigation-options-list">
-      <li class="navigation-option">Ofers</li>
-      <li class="navigation-option">
+    <ul id="main-nav-options-list">
+      <li class="main-nav-option">Ofers</li>
+      <li class="main-nav-option" (click)=" isRoomOptionsOpen = !isRoomOptionsOpen">
         Rooms
-        <ul class="option-list">
-          <li>Single</li>
-          <li>Double</li>
-          <li>Triple</li>
-        </ul>
+        
       </li>
-      <li class="navigation-option">
+      <ul class="nav-option-list" *ngIf="isRoomOptionsOpen">
+          <li class="nav-option">Single</li>
+          <li class="nav-option">Double</li>
+          <li class="nav-option">Triple</li>
+        </ul>
+      <li class="main-nav-option" (click)=" isReservationsOptionsOpen = !isReservationsOptionsOpen">
         Reservations
-        <ul class="option-list">
-          <li>Make a reservation</li>
-          <li>Request an invoice</li>
-          <li>Find a reservation</li>
-        </ul>
+        
       </li>
-      <li class="navigation-option">
+      <ul class="nav-option-list" *ngIf="isReservationsOptionsOpen">
+          <li class="nav-option">Make a reservation</li>
+          <li class="nav-option">Request an invoice</li>
+          <li class="nav-option">Find a reservation</li>
+      </ul>
+      <li class="main-nav-option" (click)=" isFoodOptionsOpen = !isFoodOptionsOpen">
         Food Menu
-        <ul class="option-list">
-          <li>Make a reservation</li>
-          <li>Request an invoice</li>
-          <li>Find a reservation</li>
-        </ul>
+        
       </li>
-      <li class="navigation-option">
+      <ul class="nav-option-list" *ngIf="isFoodOptionsOpen">
+          <li class="nav-option">Make a reservation</li>
+          <li class="nav-option">Request an invoice</li>
+          <li class="nav-option">Find a reservation</li>
+      </ul>
+      <li class="main-nav-option" (click)=" isAboutUsOptionsOpen = !isAboutUsOptionsOpen">
         About us
-        <ul class="option-list">
-          <li (click)="openSidebar()">Location</li>
-          <li (click)="openSidebar()">Contact us</li>
-          <li (click)="openSidebar()">Our team</li>
-          <li (click)="openSidebar()">Careers</li>
-        </ul>
+        
       </li>
+      <ul class="nav-option-list" *ngIf="isAboutUsOptionsOpen">
+          <li (click)="openSidebar()" class="nav-option">Location</li>
+          <li (click)="openSidebar()" class="nav-option">Contact us</li>
+          <li (click)="openSidebar()" class="nav-option">Our team</li>
+          <li (click)="openSidebar()" class="nav-option">Careers</li>
+        </ul>
     </ul>
   </nav>
   

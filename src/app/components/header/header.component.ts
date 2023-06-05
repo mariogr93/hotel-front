@@ -9,6 +9,11 @@ export class HeaderComponent {
 
 
     isNavOpen = false;
+    isRoomOptionsOpen = false;
+    isReservationsOptionsOpen = false;
+    isFoodOptionsOpen = false;
+    isAboutUsOptionsOpen = false;
+
     isSearchOpen = false;
     openSidebar(){
         this.isNavOpen = !this.isNavOpen
