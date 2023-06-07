@@ -1,0 +1,30 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <div class="input-container">
+        <label for="firstName" class="input-label">First name:</label>
+        <input class="input" type="text" name="firstName" id="firstName" formControlName="firstName"
+            [class.error-container]="
+            firstNameControl.invalid && (firstNameControl.touched || firstNameControl.dirty)
+          " />
+        <div *ngIf="firstNameControl.invalid && (firstNameControl.touched || firstNameControl.dirty)">
+            <span class="error-msg" *ngIf="firstNameControl.hasError('required')">The first name is required</span>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <label for="lastName" class="input-label">Last name:</label>
+        <input class="input" type="text" name="lastName" id="lastName" formControlName="lastName"
+            [class.error-container]="
+            lastNameControl.invalid && (lastNameControl.touched || lastNameControl.dirty)
+          " />
+        <div *ngIf="lastNameControl.invalid && (lastNameControl.touched || lastNameControl.dirty)">
+            <span class="error-msg" *ngIf="lastNameControl.hasError('required')">The last name is required</span>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button class="register-btn" type="submit" [disabled]="registerForm.invalid">
+            Register!
+        </button>
+    </div>
+
+</form>
