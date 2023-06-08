@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output } from "@angular/core";
-import { FormBuilder, FormControl, Validators } from "@angular/forms";
+import { AbstractControl, FormBuilder, FormControl, ValidationErrors, Validators } from "@angular/forms";
 
 @Component({
     selector:"register-component",
@@ -12,7 +12,9 @@ export class RegisterComponent implements OnInit {
     registerForm = this.fb.group({
         firstName: ['', [Validators.required]],
         lastName: ['', [Validators.required]],
-    })
+        password: [ '', Validators.required ],
+        confirmPassword: [ '', Validators.required ],
+    },  { validators: [ this.matchingPasswordsValidator ] })
 
 
     get firstNameControl(): FormControl {
@@ -23,6 +25,14 @@ export class RegisterComponent implements OnInit {
         return this.registerForm.get('lastName') as FormControl;
     }
 
+    get passwordControl(): FormControl {
+        return this.registerForm.get("password") as FormControl;
+    }
+
+    get confirmPasswordControl(): FormControl {
+        return this.registerForm.get("confirmPassword") as FormControl;
+    }
+
     constructor(private fb: FormBuilder){}
 
     ngOnInit(): void {
@@ -31,5 +41,14 @@ export class RegisterComponent implements OnInit {
 
     onSubmit(){
 
+    }
+
+    matchingPasswordsValidator(form: AbstractControl): ValidationErrors | null {
+        const pass = form.get('password') as FormControl;
+        const confirmPass = form.get('confirmPassword') as FormControl;
+
+        return pass && confirmPass && pass.value == confirmPass?.value
+            ? null
+            : { matchingPasswordsValidator: true };
     }
 }

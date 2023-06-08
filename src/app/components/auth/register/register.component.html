@@ -20,6 +20,29 @@
             <span class="error-msg" *ngIf="lastNameControl.hasError('required')">The last name is required</span>
         </div>
     </div>
+    <div class="input-container">
+        <label for="password" class="signin-label">Password</label>
+        <input class="signin-input" type="password" name="password" id="password" formControlName="password"
+            [class.error-container]="passwordControl.invalid && (passwordControl.touched || passwordControl.dirty)">
+        <div *ngIf="passwordControl.invalid && (passwordControl.touched || passwordControl.dirty)">
+            <span class="error-msg" *ngIf="passwordControl.hasError('required')">To confirm the password is required</span>
+        </div>
+        <div *ngIf="passwordControl.valid && registerForm.invalid">
+            <span class="error-msg" *ngIf="registerForm.hasError('matchingPasswordsValidator')">The passwords do not match</span>
+        </div>
+
+    </div>
+    <div class="input-container" >
+        <label for="confirmPassword" class="signin-label">Confirm password</label>
+        <input class="signin-input" type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword" 
+            [class.error-container]="confirmPasswordControl.invalid && (confirmPasswordControl.touched || confirmPasswordControl.dirty)">
+        <div *ngIf="confirmPasswordControl.invalid && (confirmPasswordControl.touched || confirmPasswordControl.dirty)">
+            <span class="error-msg" *ngIf="confirmPasswordControl.hasError('required')">To confirm the password is required</span>
+        </div>
+        <div  *ngIf="confirmPasswordControl.valid && registerForm.invalid">
+            <span  class="error-msg" *ngIf="registerForm.hasError('matchingPasswordsValidator')">The passwords do not match</span>
+        </div>
+    </div>
 
     <div class="btn-container">
         <button class="register-btn" type="submit" [disabled]="registerForm.invalid">
