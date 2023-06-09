@@ -8,17 +8,9 @@ export interface User {
     phoneNumber: number;
 }
 
-// export interface ClientRegistration extends User {
-//     passportNumber: string;
-//     booking: string;
-// }
-
-export interface ClientRegistration {
-    firstName: string;
-    lastName: string;
-    email: string;
-    role: string;
-    password: string;
+export interface ClientRegistration extends User {
+    passportNumber: string;
+    booking: string;
 }
 
 export interface Employee extends User {

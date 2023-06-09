@@ -15,6 +15,10 @@ export class RegisterComponent implements OnInit {
         lastName: ['', [Validators.required]],
         email: ['', [Validators.required, Validators.email]],        
         role: ['', [Validators.required]],
+        gender: ['', [Validators.required]],
+        phoneNumber: ['', [Validators.required]],
+        passportNumber: ['', [Validators.required]],
+        booking: ['', [Validators.required]],
         password: [ '', Validators.required ],
         confirmPassword: [ '', Validators.required ],
     },  { validators: [ this.matchingPasswordsValidator ] })
@@ -34,6 +38,22 @@ export class RegisterComponent implements OnInit {
 
     get roleControl(): FormControl {
         return this.registerForm.get("role") as FormControl
+    }
+
+    get genderControl(): FormControl {
+        return this.registerForm.get("gender") as FormControl
+    }
+
+    get phoneNumberControl(): FormControl {
+        return this.registerForm.get("phoneNumber") as FormControl
+    }
+
+    get passportNumberControl(): FormControl {
+        return this.registerForm.get("passportNumber") as FormControl
+    }
+
+    get bookingControl(): FormControl {
+        return this.registerForm.get("booking") as FormControl
     }
 
     get passwordControl(): FormControl {
@@ -72,7 +92,11 @@ export class RegisterComponent implements OnInit {
             lastName: this.lastNameControl.value,
             email: this.emailControl.value,
             password:this.passwordControl.value,
-            role: this.roleControl.value
+            role: this.roleControl.value,
+            gender: this.genderControl.value,
+            phoneNumber: this.phoneNumberControl.value,
+            passportNumber: this.passportNumberControl.value,
+            booking: this.bookingControl.value
         }
         return signupForm;
     }
