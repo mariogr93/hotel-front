@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output } from "@angular/core";
 import { AbstractControl, FormBuilder, FormControl, ValidationErrors, Validators } from "@angular/forms";
+import { ClientRegistration } from "src/app/models/user.interface";
 
 @Component({
     selector:"register-component",
@@ -8,10 +9,12 @@ import { AbstractControl, FormBuilder, FormControl, ValidationErrors, Validators
 })
 
 export class RegisterComponent implements OnInit {
-
+    
     registerForm = this.fb.group({
         firstName: ['', [Validators.required]],
         lastName: ['', [Validators.required]],
+        email: ['', [Validators.required, Validators.email]],        
+        role: ['', [Validators.required]],
         password: [ '', Validators.required ],
         confirmPassword: [ '', Validators.required ],
     },  { validators: [ this.matchingPasswordsValidator ] })
@@ -23,6 +26,14 @@ export class RegisterComponent implements OnInit {
 
     get lastNameControl(): FormControl {
         return this.registerForm.get('lastName') as FormControl;
+    }
+
+    get emailControl(): FormControl {
+        return this.registerForm.get("email") as FormControl
+    }
+
+    get roleControl(): FormControl {
+        return this.registerForm.get("role") as FormControl
     }
 
     get passwordControl(): FormControl {
@@ -40,6 +51,9 @@ export class RegisterComponent implements OnInit {
     }
 
     onSubmit(){
+        if (this.registerForm.valid) {
+            const newUser: ClientRegistration = this.getFrom()
+        }
 
     }
 
@@ -50,5 +64,16 @@ export class RegisterComponent implements OnInit {
         return pass && confirmPass && pass.value == confirmPass?.value
             ? null
             : { matchingPasswordsValidator: true };
+    }
+
+    getFrom():ClientRegistration {
+        const signupForm: ClientRegistration = {
+            firstName : this.firstNameControl.value,
+            lastName: this.lastNameControl.value,
+            email: this.emailControl.value,
+            password:this.passwordControl.value,
+            role: this.roleControl.value
+        }
+        return signupForm;
     }
 }
