@@ -13,7 +13,7 @@ export interface ClientRegistration extends User {
     booking: string;
 }
 
-export interface Employee extends User {
+export interface EmployeeRegistration extends User {
     salary: number;
     hotel: string;
 }
