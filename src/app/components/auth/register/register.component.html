@@ -4,10 +4,11 @@
     <h4>
         Register
     </h4>
-    <label class="switch" *ngIf="isAdminUser">
+    <!-- TODO: HIDE BTN TO JUST APPEAR FOR LOGGED IN ADMIN USERS WICH ARE ABLE TO REGISTER ANY TYPE OF USERS -->
+    <!-- <label class="switch" *ngIf="isAdminUser">
         <input type="checkbox" [value]="true" (click)="toggleSwitch($event)">
         <span class="slider round" ></span>
-    </label>
+    </label> -->
 </div>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
     <div class="input-container">
