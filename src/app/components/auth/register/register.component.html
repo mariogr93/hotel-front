@@ -1,3 +1,14 @@
+
+
+<div>
+    <h4>
+        Register
+    </h4>
+    <label class="switch" *ngIf="isAdminUser">
+        <input type="checkbox" [value]="true" (click)="toggleSwitch($event)">
+        <span class="slider round" ></span>
+    </label>
+</div>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
     <div class="input-container">
         <label for="firstName" class="input-label">First name:</label>
@@ -20,9 +31,91 @@
             <span class="error-msg" *ngIf="lastNameControl.hasError('required')">The last name is required</span>
         </div>
     </div>
+
     <div class="input-container">
-        <label for="password" class="signin-label">Password</label>
-        <input class="signin-input" type="password" name="password" id="password" formControlName="password"
+        <label for="email" class="input-label">Email:</label>
+        <input class="input" type="text" name="email" id="email" formControlName="email"
+            [class.error-container]="
+            emailControl.invalid && (emailControl.touched || emailControl.dirty)
+          " />
+        <div *ngIf="emailControl.invalid && (emailControl.touched || emailControl.dirty)">
+            <span class="error-msg" *ngIf="emailControl.hasError('required')">The last name is required</span>
+        </div>
+    </div>
+
+    <div class="input-container">
+        <label for="phoneNumber" class="input-label">Phone number:</label>
+        <input class="input" type="text" name="phoneNumber" id="phoneNumber" formControlName="phoneNumber"
+            [class.error-container]="
+            phoneNumberControl.invalid && (phoneNumberControl.touched || phoneNumberControl.dirty)
+          " />
+        <div *ngIf="phoneNumberControl.invalid && (phoneNumberControl.touched || phoneNumberControl.dirty)">
+            <span class="error-msg" *ngIf="phoneNumberControl.hasError('required')">The last name is required</span>
+        </div>
+    </div>
+
+
+    --------------
+
+    <div *ngIf="_isEmployeeForm | async; else clientForm">
+        <div class="input-container">
+            <label for="salary" class="input-label">Salary:</label>
+            <input class="input" type="text" name="lastName" id="salary" formControlName="salary"
+                [class.error-container]="
+                salaryControl.invalid && (salaryControl.touched || salaryControl.dirty)
+              " />
+            <div *ngIf="salaryControl.invalid && (salaryControl.touched || salaryControl.dirty)">
+                <span class="error-msg" *ngIf="salaryControl.hasError('required')">The last name is required</span>
+            </div>
+        </div>
+    
+        <div class="input-container">
+            <label for="hotel" class="input-label">Hotel:</label>
+            <input class="input" type="text" name="hotel" id="hotel" formControlName="hotel"
+                [class.error-container]="
+                hotelControl.invalid && (hotelControl.touched || hotelControl.dirty)
+              " />
+            <div *ngIf="hotelControl.invalid && (hotelControl.touched || hotelControl.dirty)">
+                <span class="error-msg" *ngIf="hotelControl.hasError('required')">The last name is required</span>
+            </div>
+        </div>
+    
+
+    </div>
+
+    <ng-template #clientForm>
+
+        <div class="input-container">
+            <label for="passportNumber" class="input-label">Passport #:</label>
+            <input class="input" type="text" name="passportNumber" id="passportNumber" formControlName="passportNumber"
+                [class.error-container]="
+                passportNumberControl.invalid && (passportNumberControl.touched || passportNumberControl.dirty)
+              " />
+            <div *ngIf="passportNumberControl.invalid && (passportNumberControl.touched || passportNumberControl.dirty)">
+                <span class="error-msg" *ngIf="passportNumberControl.hasError('required')">The last name is required</span>
+            </div>
+        </div>
+    
+        <div class="input-container">
+            <label for="booking" class="input-label">Booking:</label>
+            <input class="input" type="text" name="booking" id="booking" formControlName="booking"
+                [class.error-container]="
+                bookingControl.invalid && (bookingControl.touched || bookingControl.dirty)
+              " />
+            <div *ngIf="bookingControl.invalid && (bookingControl.touched || bookingControl.dirty)">
+                <span class="error-msg" *ngIf="bookingControl.hasError('required')">The last name is required</span>
+            </div>
+        </div>
+
+
+    </ng-template>
+    
+
+--------------
+
+    <div class="input-container">
+        <label for="password" class="input-label">Password</label>
+        <input class="input" type="password" name="password" id="password" formControlName="password"
             [class.error-container]="passwordControl.invalid && (passwordControl.touched || passwordControl.dirty)">
         <div *ngIf="passwordControl.invalid && (passwordControl.touched || passwordControl.dirty)">
             <span class="error-msg" *ngIf="passwordControl.hasError('required')">To confirm the password is required</span>
@@ -33,8 +126,8 @@
 
     </div>
     <div class="input-container" >
-        <label for="confirmPassword" class="signin-label">Confirm password</label>
-        <input class="signin-input" type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword" 
+        <label for="confirmPassword" class="input-label">Confirm password</label>
+        <input class="input" type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword" 
             [class.error-container]="confirmPasswordControl.invalid && (confirmPasswordControl.touched || confirmPasswordControl.dirty)">
         <div *ngIf="confirmPasswordControl.invalid && (confirmPasswordControl.touched || confirmPasswordControl.dirty)">
             <span class="error-msg" *ngIf="confirmPasswordControl.hasError('required')">To confirm the password is required</span>
