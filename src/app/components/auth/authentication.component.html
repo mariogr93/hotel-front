@@ -2,6 +2,12 @@
     authentication component
 </h1>
 
-<login-component></login-component>
+<auth-tabs-component (selectedTab)="selectedTab($event)"></auth-tabs-component>
 
-<register-component></register-component>
+<div *ngIf="tabSelected; else logintab">
+    <register-component></register-component>
+</div>
+
+<ng-template #logintab>
+    <login-component></login-component>
+</ng-template>

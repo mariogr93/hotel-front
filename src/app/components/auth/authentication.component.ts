@@ -7,5 +7,9 @@ import { Component } from "@angular/core";
     styleUrls:["./authentication.component.html"]
 })
 export class AuthenticationComponent {
-    
+    tabSelected = true;
+
+    selectedTab(e: boolean){
+      this.tabSelected = e;
+    }
 }
